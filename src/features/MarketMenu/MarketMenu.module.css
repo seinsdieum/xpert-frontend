@@ -1,0 +1,23 @@
+.wrapper {
+    border-radius: 0;
+    border: 0px;
+    min-height: 100%;
+    position: relative;
+    transition: var(--anim-1);
+    background: var(--color-main);
+    border-right: 1px solid var(--color-third);
+}
+
+.wrapper.expanded {
+    background-color: var(--color-second);
+}
+
+.market_link {
+    background-color: transparent;
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+.market_link.active {
+    background-color: var(--accent);
+}

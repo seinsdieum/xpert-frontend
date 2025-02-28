@@ -1,0 +1,38 @@
+.wrapper {
+    transition: var(--anim-1);
+    width: 100%;
+    background-color: transparent;
+    justify-content: flex-start;
+}
+
+.icon {
+}
+.text {
+    transition: var(--anim-1);
+}
+
+.wrapper:hover {
+    background-color: var(--color-third);
+}
+.wrapper:hover .icon {
+}
+
+.wrapper.focused:not(:hover) {
+    background-color: var(--accent);
+}
+
+.expanded {
+    justify-content: flex-start;
+    padding: var(--padding-inner) calc(var(--padding-inner) * 2);
+    gap: var(--padding);
+}
+
+.wrapper:not(.expanded) {
+    column-gap: 0;
+    padding: var(--padding-inner);
+}
+
+.wrapper:not(.expanded) .text {
+    font-size: 0;
+    opacity: 0;
+}

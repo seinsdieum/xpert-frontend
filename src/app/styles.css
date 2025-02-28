@@ -1,0 +1,86 @@
+.bold {
+    font-weight: var(--font-weight-bold);
+}
+
+.card {
+    background-color: var(--color-second);
+    padding: var(--padding-inner);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--padding-inner);
+    border: 1px solid var(--color-separate);
+    /* test */
+}
+
+.card p {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.card h1,
+.card h2,
+.card h3 {
+    vertical-align: top;
+    display: inline-block;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+    vertical-align: top;
+    display: inline-block;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.card > .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: var(--padding-inner);
+    justify-content: space-between;
+    width: 100%;
+}
+
+.buttons > button {
+    width: 100%;
+}
+
+button.inner {
+    background: var(--color-third);
+    border-radius: var(--radius-inner);
+}
+
+input.inner {
+    background: var(--color-main);
+    border-radius: var(--radius-inner);
+}
+
+.font1 {
+    font-size: var(--font-h1-size);
+}
+.font2 {
+    font-size: var(--font-h2-size);
+}
+.font3 {
+    font-size: var(--font-h3-size);
+}
+.fontp {
+    font-size: var(--font-size);
+}
+
+.inline {
+    vertical-align: top;
+    display: inline-block;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}

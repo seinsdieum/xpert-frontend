@@ -1,0 +1,45 @@
+.wrapper {
+    display: flex;
+    padding: var(--padding-inner) var(--padding);
+    gap: var(--padding);
+    width: 100vw;
+    align-items: center;
+    background-color: var(--color-second);
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-third);
+}
+
+.search {
+    flex: 1;
+    background-color: var(--color-main);
+    padding: calc(var(--padding-inner) / 2) var(--padding);
+}
+
+.profile_button {
+    padding: calc(var(--padding-inner) / 2) !important;
+    font-size: var(--font-h2-size) !important;
+}
+
+.wrapper > * {
+}
+
+.wrapper > * {
+    width: none;
+}
+
+.head_icon {
+    height: var(--font-h1-size) !important;
+}
+
+.right_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: var(--padding-inner);
+}
+
+.center_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: var(--padding-inner);
+    flex: 0.6;
+}
