@@ -1,4 +1,4 @@
-import MarketPage from '@/features/MarketPage/MarketPage';
+import MarketPage from '@/features/marketPage/ui/MarketPage';
 import EButton from '@/shared/ui/EButton/EButton';
 import IconWrapper from '@/shared/ui/IconWrapper/IconWrapper';
 import { HiCog } from 'react-icons/hi';

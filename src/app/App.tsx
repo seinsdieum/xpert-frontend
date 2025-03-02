@@ -1,22 +1,23 @@
 import { createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
 import './App.css';
-import UserPage from '@/pages/users/ui/UserPage';
-import MarketLayout from '@/features/MarketLayout/MarketLayout';
-import HomePage from '@/pages/home/ui/HomePage';
-import TaskPage from '@/pages/tasks/ui/TaskPage';
-import SearchPage from '@/pages/search/SearchPage';
-import ChatPage from '@/pages/chats/ui/ChatPage';
+import { UserPage } from '@/pages/users';
+import { MarketLayout } from '@/widgets';
+import { HomePage } from '@/pages/home';
+import { TaskPage } from '@/pages/tasks';
+import { SearchPage } from '@/pages/search';
+import { ChatPage } from '@/pages/chats';
 import {
     chatsRoute,
+    homeRoute,
     searchRoute,
     signRoute,
     tasksRoute,
     usersRoute
-} from '@/shared/config/frontend';
-import SignPage from '@/pages/sign-in/ui/SignPage';
+} from '@/shared/config';
+import { SignPage } from '@/pages/sign-in';
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: `${homeRoute}`,
         children: [
             { index: true, element: <HomeApp /> },
             { path: `${usersRoute}/*`, element: <UserApp /> },

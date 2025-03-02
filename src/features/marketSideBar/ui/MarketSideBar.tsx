@@ -1,22 +1,15 @@
-import { IconType } from 'react-icons/lib';
-import style from './MarketMenu.module.css';
-import { HiChat, HiMenu } from 'react-icons/hi';
+import style from './MarketSideBar.module.css';
+import { HiMenu } from 'react-icons/hi';
 import IconLink from '@/shared/ui/IconLink/IconLink';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
-type MenuOption = {
-    title: string;
-    icon: IconType;
-    to: string;
-    action?: React.MouseEventHandler<HTMLButtonElement>;
-};
+import { SideBarLink } from '@/shared/config/types';
 
 type Props = {
-    options?: MenuOption[];
+    options?: SideBarLink[];
 };
 
-const MarketMenu = (props: Props) => {
+const MarketSideBar = (props: Props) => {
     const [isExpanded, setIsExpanded] = useState(false);
     return (
         <div
@@ -36,9 +29,10 @@ const MarketMenu = (props: Props) => {
             {props.options
                 ? props.options.map(o => (
                       <NavLink
+                          key={o.to}
                           to={o.to}
-                          className={isActive => {
-                              return isActive
+                          className={opt => {
+                              return opt.isActive
                                   ? `${style.market_link} ${style.active}`
                                   : style.market_link;
                           }}
@@ -55,4 +49,4 @@ const MarketMenu = (props: Props) => {
         </div>
     );
 };
-export default MarketMenu;
+export default MarketSideBar;

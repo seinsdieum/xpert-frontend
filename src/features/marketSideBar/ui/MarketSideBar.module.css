@@ -21,3 +21,7 @@
 .market_link.active {
     background-color: var(--accent);
 }
+
+.market_link.active button {
+    background-color: transparent;
+}
