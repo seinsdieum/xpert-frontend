@@ -1,7 +1,7 @@
 import { createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
 import './App.css';
 import { UserPage } from '@/pages/users';
-import { MarketLayout } from '@/widgets';
+import { MarketLayout } from '@/widgets/marketLayout';
 import { HomePage } from '@/pages/home';
 import { TaskPage } from '@/pages/tasks';
 import { SearchPage } from '@/pages/search';

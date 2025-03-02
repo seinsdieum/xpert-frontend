@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 import style from './MarketLayout.module.css';
-import MarketSideBar from '@/features/marketSideBar/ui/MarketSideBar';
-import MarketHeader from '@/features/marketHeader/ui/MarketHeader';
-import { sideBarLinks } from '../config/sidebar';
+import MarketSideBar from './MarketSideBar';
+import MarketHeader from './MarketHeader';
+import { sideBarLinks } from '../model/sidebar';
 
 const MarketLayout = () => {
     return (

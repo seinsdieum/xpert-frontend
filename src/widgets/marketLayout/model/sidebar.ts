@@ -1,8 +1,8 @@
-import { chatsRoute, homeRoute, tasksRoute } from '@/shared/config/frontend';
-import { SideBarLink } from '@/shared/config/types';
+import { chatsRoute, homeRoute, tasksRoute } from '@/shared/config';
+import { SideBarLinkProps } from '@/shared/ui';
 import { HiChatAlt, HiHome, HiPencilAlt } from 'react-icons/hi';
 
-export const sideBarLinks: SideBarLink[] = [
+export const sideBarLinks: SideBarLinkProps[] = [
     { icon: HiHome, title: 'Главная', to: homeRoute },
     {
         icon: HiPencilAlt,

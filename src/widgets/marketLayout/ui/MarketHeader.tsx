@@ -1,13 +1,13 @@
 import { HiBell, HiSearch, HiUser } from 'react-icons/hi';
 import style from './MarketHeader.module.css';
-import icon from '@/assets/product/icons/logo.svg';
-import ImageIcon from '@/shared/ui/ImageIcon/ImageIcon';
-import IconButton from '@/shared/ui/IconButton/IconButton';
+import { logoIcon } from '@/assets/product/icons';
+import { ImageIcon } from '@/shared/ui';
+import { IconButton } from '@/shared/ui';
 
 const MarketHeader = () => {
     return (
         <div className={style.wrapper}>
-            <ImageIcon className={style.head_icon} src={icon} />
+            <ImageIcon className={style.head_icon} src={logoIcon} />
             <div className={style.center_wrapper}>
                 <IconButton className={style.profile_button} icon={HiSearch} />
                 <input placeholder="Поиск..." className={style.search}></input>

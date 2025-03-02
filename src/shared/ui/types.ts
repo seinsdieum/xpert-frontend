@@ -1,3 +1,5 @@
+import { IconType } from 'react-icons/lib';
+
 export interface ButtonProps {
     children?: React.ReactNode;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -8,3 +10,9 @@ export interface ButtonProps {
     active?: boolean;
     className?: string;
 }
+export type SideBarLinkProps = {
+    title: string;
+    icon: IconType;
+    to: string;
+    action?: React.MouseEventHandler<HTMLButtonElement>;
+};

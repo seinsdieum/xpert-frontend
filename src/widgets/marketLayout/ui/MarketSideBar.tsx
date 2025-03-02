@@ -1,12 +1,12 @@
 import style from './MarketSideBar.module.css';
 import { HiMenu } from 'react-icons/hi';
-import IconLink from '@/shared/ui/IconLink/IconLink';
+import { IconLink } from '@/shared/ui';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { SideBarLink } from '@/shared/config/types';
+import { SideBarLinkProps } from '@/shared/ui';
 
 type Props = {
-    options?: SideBarLink[];
+    options?: SideBarLinkProps[];
 };
 
 const MarketSideBar = (props: Props) => {
