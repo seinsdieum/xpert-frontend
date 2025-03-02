@@ -1,20 +1,27 @@
 .wrapper {
-    transition: var(--anim-1);
     width: 100%;
     background-color: transparent;
+    transition: var(--anim-1);
+    padding: 0;
+    border: none;
+    border-radius: none;
     justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    gap: var(--padding-inner);
+    font-size: var(--font-h2-size);
 }
 
-.icon {
+.wrapper p {
+    font-size: 0.6em;
 }
+
 .text {
     transition: var(--anim-1);
 }
 
 .wrapper:hover {
     background-color: var(--color-third);
-}
-.wrapper:hover .icon {
 }
 
 .wrapper.focused:not(:hover) {

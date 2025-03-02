@@ -1,4 +1,5 @@
 import { IconType } from 'react-icons/lib';
+import { ReactNode } from '../lib';
 
 export interface ButtonProps {
     children?: React.ReactNode;
@@ -10,9 +11,14 @@ export interface ButtonProps {
     active?: boolean;
     className?: string;
 }
-export type SideBarLinkProps = {
+export interface SideBarLinkProps {
     title: string;
     icon: IconType;
     to: string;
     action?: React.MouseEventHandler<HTMLButtonElement>;
-};
+}
+
+export interface ContainerProps {
+    children?: ReactNode | Array<ReactNode>;
+    animateRender?: boolean;
+}

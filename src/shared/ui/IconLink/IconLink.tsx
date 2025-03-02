@@ -1,7 +1,6 @@
 import { IconType } from 'react-icons/lib';
-import IconWrapper from '@/shared/ui/IconWrapper/IconWrapper';
 import style from './IconLink.module.css';
-import { ButtonProps } from '@/shared/ui/types';
+import { ButtonProps } from '@/shared/ui';
 
 interface Props extends ButtonProps {
     title?: string;
@@ -13,7 +12,7 @@ interface Props extends ButtonProps {
 
 const IconLink = (props: Props) => {
     return (
-        <IconWrapper
+        <button
             onFocus={props.onFocus}
             onBlur={props.onBlur}
             onMouseEnter={props.onMouseEnter}
@@ -42,7 +41,7 @@ const IconLink = (props: Props) => {
                     {props.title}
                 </p>
             ) : null}
-        </IconWrapper>
+        </button>
     );
 };
 
