@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import style from './MarketLayout.module.css';
-import MarketMenu from '../MarketMenu/MarketMenu';
-import MarketHeader from '../MarketHeader/MarketHeader';
+import MarketMenu from '@/features/MarketMenu/MarketMenu';
+import MarketHeader from '@/features/MarketHeader/MarketHeader';
 
 const MarketLayout = () => {
     return (

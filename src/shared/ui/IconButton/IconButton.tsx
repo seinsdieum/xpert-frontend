@@ -1,5 +1,5 @@
 import { IconType } from 'react-icons/lib';
-import { ButtonProps } from '../types';
+import { ButtonProps } from '@/shared/ui/types';
 import style from './IconButton.module.css';
 
 interface Props extends ButtonProps {

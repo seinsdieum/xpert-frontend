@@ -1,6 +1,6 @@
-import MarketPage from '../../features/MarketPage/MarketPage';
-import EButton from '../../shared/ui/EButton/EButton';
-import IconWrapper from '../../shared/ui/IconWrapper/IconWrapper';
+import MarketPage from '@/features/MarketPage/MarketPage';
+import EButton from '@/shared/ui/EButton/EButton';
+import IconWrapper from '@/shared/ui/IconWrapper/IconWrapper';
 import { HiCog } from 'react-icons/hi';
 import style from './HomePage.module.css';
 const HomePage = () => {

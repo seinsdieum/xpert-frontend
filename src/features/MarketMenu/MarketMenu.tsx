@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons/lib';
 import style from './MarketMenu.module.css';
 import { HiChat, HiMenu } from 'react-icons/hi';
-import IconLink from '../../shared/ui/IconLink/IconLink';
+import IconLink from '@/shared/ui/IconLink/IconLink';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 

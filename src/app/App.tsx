@@ -1,20 +1,29 @@
 import { createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
 import './App.css';
-import UserPage from '../pages/UserPage';
-import MarketLayout from '../features/MarketLayout/MarketLayout';
-import HomePage from '../pages/HomePage/HomePage';
-import TaskPage from '../pages/TaskPage';
-import SearchPage from '../pages/SearchPage';
-import ChatPage from '../pages/ChatPage';
+import UserPage from '@/pages/users/ui/UserPage';
+import MarketLayout from '@/features/MarketLayout/MarketLayout';
+import HomePage from '@/pages/home/ui/HomePage';
+import TaskPage from '@/pages/tasks/ui/TaskPage';
+import SearchPage from '@/pages/search/SearchPage';
+import ChatPage from '@/pages/chats/ui/ChatPage';
+import {
+    chatsRoute,
+    searchRoute,
+    signRoute,
+    tasksRoute,
+    usersRoute
+} from '@/shared/config/frontend';
+import SignPage from '@/pages/sign-in/ui/SignPage';
 const router = createBrowserRouter([
     {
         path: '/',
         children: [
             { index: true, element: <HomeApp /> },
-            { path: '/users/*', element: <UserApp /> },
-            { path: '/task/*', element: <TaskApp /> },
-            { path: '/search/*', element: <SearchApp /> },
-            { path: '/chats/*', element: <ChatApp /> }
+            { path: `${usersRoute}/*`, element: <UserApp /> },
+            { path: `${tasksRoute}/*`, element: <TaskApp /> },
+            { path: `${searchRoute}/*`, element: <SearchApp /> },
+            { path: `${chatsRoute}/*`, element: <ChatApp /> },
+            { path: `${signRoute}/*`, element: <SignApp /> }
         ],
         element: <MarketLayout />
     }
@@ -56,6 +65,14 @@ function SearchApp() {
     return (
         <Routes>
             <Route index element={<SearchPage />}></Route>
+        </Routes>
+    );
+}
+
+function SignApp() {
+    return (
+        <Routes>
+            <Route index element={<SignPage />}></Route>
         </Routes>
     );
 }

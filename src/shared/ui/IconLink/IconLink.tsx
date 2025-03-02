@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons/lib';
-import IconWrapper from '../IconWrapper/IconWrapper';
+import IconWrapper from '@/shared/ui/IconWrapper/IconWrapper';
 import style from './IconLink.module.css';
-import { ButtonProps } from '../types';
+import { ButtonProps } from '@/shared/ui/types';
 
 interface Props extends ButtonProps {
     title?: string;

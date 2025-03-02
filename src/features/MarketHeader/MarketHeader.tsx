@@ -1,8 +1,8 @@
 import { HiBell, HiSearch, HiUser } from 'react-icons/hi';
 import style from './MarketHeader.module.css';
-import icon from '../../assets/product/icons/logo.svg';
-import ImageIcon from '../../shared/ui/ImageIcon/ImageIcon';
-import IconButton from '../../shared/ui/IconButton/IconButton';
+import icon from '@/assets/product/icons/logo.svg';
+import ImageIcon from '@/shared/ui/ImageIcon/ImageIcon';
+import IconButton from '@/shared/ui/IconButton/IconButton';
 
 const MarketHeader = () => {
     return (
@@ -12,6 +12,7 @@ const MarketHeader = () => {
                 <IconButton className={style.profile_button} icon={HiSearch} />
                 <input placeholder="Поиск..." className={style.search}></input>
             </div>
+            <div></div>
             <div className={style.right_wrapper}>
                 <IconButton className={style.profile_button} icon={HiBell} />
                 <IconButton className={style.profile_button} icon={HiUser} />
