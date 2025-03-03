@@ -1,5 +1,6 @@
 import { ReactNode } from './types';
 import useThrottle from './useThrottle';
+import useDebounce from './useDebounce';
 
-export { useThrottle };
+export { useThrottle, useDebounce };
 export type { ReactNode };

@@ -3,7 +3,6 @@ import { HiSearch } from 'react-icons/hi';
 import style from './MarketSearch.module.css';
 import { useState } from 'react';
 import { useThrottle } from '@/shared/lib';
-import useDebounce from '@/shared/lib/useDebounce';
 const MarketSearch = () => {
     const [search, setSearch] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
