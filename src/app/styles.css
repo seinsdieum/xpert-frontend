@@ -10,7 +10,6 @@
     align-items: flex-start;
     flex-direction: column;
     gap: var(--padding-inner);
-    border: 1px solid var(--color-separate);
     /* test */
 }
 

@@ -1,0 +1,6 @@
+.button {
+    transition: var(--anim-1);
+}
+.button:hover {
+    background-color: var(--color-third);
+}

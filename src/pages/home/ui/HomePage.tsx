@@ -1,5 +1,5 @@
 import { MarketPage } from '@/widgets/page';
-import { EButton } from '@/shared/ui';
+import { Button } from '@/shared/ui';
 import { IconWrapper } from '@/shared/ui/';
 import { HiCog } from 'react-icons/hi';
 import style from './HomePage.module.css';
@@ -10,7 +10,7 @@ const HomePage = () => {
             <h2>Hola!</h2>
             <h3>Hello!</h3>
             <p className="bold">Бонжур епте</p>
-            <EButton>Перейти</EButton>
+            <Button>Перейти</Button>
             <div className="card">
                 <h1>Привет!</h1>
                 <IconWrapper>

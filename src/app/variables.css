@@ -5,20 +5,20 @@
     --color-main-dark: hsl(0, 0%, 8%);
     --color-second-dark: hsl(0, 0%, 13%);
     --color-third-dark: hsl(0, 0%, 18%);
-    --color-separate-dark: rgb(70, 70, 70);
+    --color-separate-dark: hsl(0, 0%, 22%);
     --color-text-dark: rgb(220, 220, 220);
 
-    --color-main-light: hsl(0, 0%, 8%);
-    --color-second-light: hsl(0, 0%, 23%);
-    --color-third-light: hsl(0, 0%, 26.75%);
-    --color-text-light: rgb(220, 220, 220);
-    --color-separate-light: rgb(70, 70, 70);
+    --color-main-light: hsl(0, 0%, 94%);
+    --color-second-light: hsl(0, 0%, 98%);
+    --color-third-light: hsl(0, 0%, 91%);
+    --color-text-light: rgb(30, 30, 30);
+    --color-separate-light: hsl(0, 0%, 86%);
 
     --color-main: var(--color-main-dark);
     --color-second: var(--color-second-dark);
     --color-third: var(--color-third-dark);
     --color-text: var(--color-text-dark);
-    --color-separate: rgb(70, 70, 70);
+    --color-separate: var(--color-separate-dark);
 }
 
 :root {
@@ -35,6 +35,7 @@
 :root {
     /* layout */
     --padding-inner: 10px;
+    --padding-def: 15px;
     --padding: 20px;
 
     --radius: 25px;
