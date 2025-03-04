@@ -24,4 +24,5 @@
 
 .market_link.active button {
     background-color: transparent;
+    color: var(--color-second-light);
 }

@@ -25,9 +25,8 @@ const IconLink = (props: Props) => {
         >
             {props.icon ? (
                 <props.icon
-                    className={`
-      ${style.icon}
-      ${props.iconClassName || null}  
+                    className={`${style.icon}
+      ${props.iconClassName ? props.iconClassName : ''}  
         `}
                 />
             ) : null}

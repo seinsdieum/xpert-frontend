@@ -1,6 +1,12 @@
 .button {
     transition: var(--anim-1);
+    font-weight: bold;
 }
 .button:hover {
     background-color: var(--color-third);
+}
+
+.button.active {
+    background-color: var(--accent);
+    color: var(--color-second-light);
 }

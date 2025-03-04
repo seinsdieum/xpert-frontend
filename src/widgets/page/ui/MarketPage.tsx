@@ -1,14 +1,11 @@
-import { ReactNode } from 'react';
 import style from './MarketPage.module.css';
-type Props = {
-    children?: ReactNode;
-    className?: string;
-};
+import { ContainerProps } from '@/shared/ui';
+type Props = ContainerProps;
 const MarketPage = (props: Props) => {
     return (
         <div
             {...props}
-            className={`${style.wrapper} ${props.className ? props.className : null}`}
+            className={`${style.wrapper} ${props.className ? props.className : ''}`}
         ></div>
     );
 };

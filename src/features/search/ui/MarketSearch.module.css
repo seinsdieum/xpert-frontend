@@ -1,0 +1,108 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    background: var(--color-main);
+    border-radius: var(--radius);
+    padding: 0;
+
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    transition: var(--anim-1);
+    outline: 0px transparent;
+    position: relative;
+}
+
+.wrapper:hover {
+    background-color: var(--color-third);
+}
+
+.wrapper button {
+    background: transparent;
+    position: absolute;
+    left: calc(var(--padding-inner) + calc(var(--padding-inner) / 2));
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.wrapper input {
+    font-size: var(--font-size) !important;
+    border: none;
+    width: 100%;
+    padding: 0;
+    padding-left: calc(
+        var(--padding-inner) + var(--font-h2-size) + calc(var(--padding-inner) * 1.5)
+    );
+    padding-top: calc(var(--padding) + calc(var(--padding-inner) / 2));
+    padding-bottom: calc(var(--padding) + calc(var(--padding-inner) / 2));
+    background: transparent;
+    border-radius: 0;
+    max-height: 28px;
+}
+
+.wrapper:has(input:focus) {
+    outline: 1px solid var(--accent);
+}
+
+.suggestions_wrapper {
+    position: absolute;
+    top: calc(100% + var(--padding-inner));
+
+    left: 0;
+    right: 0;
+    background-color: var(--color-main);
+    outline: 1px solid var(--color-separate);
+    border-radius: var(--radius);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    transition: var(--anim-1);
+}
+
+.suggestions_wrapper > div {
+    border-bottom: 1px solid var(--color-separate);
+    padding-bottom: var(--padding-inner);
+    padding-top: var(--padding-inner);
+    z-index: -1;
+}
+
+@keyframes suggestions_wrapper_anim {
+    0% {
+        outline: 1px solid var(--accent);
+    }
+    50% {
+        outline: 1px solid var(--color-separate);
+    }
+    100% {
+        outline: 1px solid var(--accent);
+    }
+}
+
+.suggestions_wrapper.loading {
+    outline: 1px solid var(--accent);
+}
+
+.link {
+    color: var(--color-text);
+    padding: var(--padding-inner) var(--padding);
+}
+
+.link:hover {
+    background-color: var(--color-third);
+    color: var(--color-text);
+}
+.link:active {
+    color: var(--color-second-light);
+    background-color: var(--accent);
+}
+
+.suggestions_wrapper :first-child {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+.suggestions_wrapper :last-child {
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}

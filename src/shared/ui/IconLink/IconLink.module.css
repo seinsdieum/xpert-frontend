@@ -12,6 +12,9 @@
     font-size: var(--font-h2-size);
 }
 
+.icon {
+}
+
 .wrapper p {
     font-size: 0.6em;
 }
@@ -26,6 +29,9 @@
 
 .wrapper.focused:not(:hover) {
     background-color: var(--accent);
+}
+.wrapper.focused .icon {
+    color: var(--color-main-light);
 }
 
 .expanded {

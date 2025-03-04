@@ -8,7 +8,7 @@ export interface ButtonProps {
     onBlur?: React.FocusEventHandler<HTMLButtonElement>;
     onMouseEnter?: React.MouseEventHandler<HTMLButtonElement>;
     onMouseLeave?: React.MouseEventHandler<HTMLButtonElement>;
-    active?: boolean;
+    isActive?: boolean;
     className?: string;
 }
 export interface SideBarLinkProps {
@@ -21,4 +21,5 @@ export interface SideBarLinkProps {
 export interface ContainerProps {
     children?: ReactNode | Array<ReactNode>;
     animateRender?: boolean;
+    className?: string;
 }

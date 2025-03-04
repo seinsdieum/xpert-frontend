@@ -4,3 +4,8 @@
     gap: var(--padding);
     padding: var(--padding);
 }
+
+.wrapper {
+    flex: 0.8;
+    margin: 0 auto;
+}

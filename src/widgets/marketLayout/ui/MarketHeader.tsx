@@ -3,7 +3,7 @@ import style from './MarketHeader.module.css';
 import { logoIcon } from '@/assets/product/icons';
 import { IconLink, ImageIcon } from '@/shared/ui';
 import { IconButton } from '@/shared/ui';
-import { MarketSearch } from '@/widgets/search';
+import { MarketSearch } from '@/features/search';
 
 const MarketHeader = () => {
     return (

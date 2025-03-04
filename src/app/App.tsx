@@ -65,7 +65,10 @@ function TaskApp() {
 function SearchApp() {
     return (
         <Routes>
-            <Route index element={<SearchPage />}></Route>
+            <Route path="" element={<SearchPage />}>
+                <Route index element={<div>все</div>}></Route>
+                <Route path={usersRoute} element={<div>userы</div>}></Route>
+            </Route>
         </Routes>
     );
 }
