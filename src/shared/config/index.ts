@@ -11,7 +11,9 @@ import {
     searchRoute,
     categoryRoute,
     typeRoute,
-    postsRoute
+    postsRoute,
+    portfolioRoute,
+    profileRoute
 } from './frontend';
 
 /* export */
@@ -25,5 +27,7 @@ export {
     searchRoute,
     categoryRoute,
     typeRoute,
-    postsRoute
+    postsRoute,
+    portfolioRoute,
+    profileRoute
 };

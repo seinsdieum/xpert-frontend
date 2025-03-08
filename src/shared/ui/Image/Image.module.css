@@ -1,0 +1,4 @@
+.wrapper {
+    width: 100%;
+    border-radius: var(--radius-inner);
+}

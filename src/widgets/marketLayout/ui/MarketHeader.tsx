@@ -8,7 +8,10 @@ import { MarketSearch } from '@/features/search';
 const MarketHeader = () => {
     return (
         <div className={style.wrapper}>
-            <ImageIcon className={style.head_icon} src={logoIcon} />
+            <div className={style.right_wrapper}>
+                <IconLink className={style.profile_button} icon={HiBell} />
+                <IconLink className={style.profile_button} icon={HiUser} />
+            </div>
             <div className={style.center_wrapper}>
                 <MarketSearch />
             </div>

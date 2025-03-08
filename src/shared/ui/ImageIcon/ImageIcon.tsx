@@ -6,7 +6,7 @@ type Props = {
 };
 
 const ImageIcon = (props: Props) => {
-    return <img {...props} className={`${style.wrapper} ${props.className || null}`} />;
+    return <img {...props} className={`${style.wrapper} ${props.className || ''}`} />;
 };
 
 export default ImageIcon;

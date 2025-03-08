@@ -1,6 +1,7 @@
 import { IconType } from 'react-icons/lib';
 import style from './IconLink.module.css';
 import { ButtonProps } from '@/shared/ui';
+import { useClassName } from '@/shared/lib';
 
 interface Props extends ButtonProps {
     title?: string;
@@ -11,6 +12,7 @@ interface Props extends ButtonProps {
 }
 
 const IconLink = (props: Props) => {
+    const expandedClass = useClassName(props.isExpanded, style.expanded);
     return (
         <button
             onFocus={props.onFocus}
@@ -20,7 +22,7 @@ const IconLink = (props: Props) => {
             onClick={props.onClick}
             className={`
         ${style.wrapper}
-        ${props.isExpanded ? style.expanded : ''}
+        ${expandedClass}
         `}
         >
             {props.icon ? (

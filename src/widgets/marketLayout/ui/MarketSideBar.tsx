@@ -1,9 +1,13 @@
 import style from './MarketSideBar.module.css';
-import { HiMenu } from 'react-icons/hi';
+import { HiMenu, HiSearch } from 'react-icons/hi';
 import { IconLink } from '@/shared/ui';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useSearchParams } from 'react-router-dom';
 import { SideBarLinkProps } from '@/shared/ui';
+import { store } from '@/entities/store';
+import { searchQueryParam, selectRoute, selectSearch } from '@/features/search';
+import { searchRoute } from '@/shared/config';
+import { useSelector } from 'react-redux';
 
 type Props = {
     options?: SideBarLinkProps[];
@@ -11,12 +15,14 @@ type Props = {
 
 const MarketSideBar = (props: Props) => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const search = useSelector(selectSearch);
+    const route = useSelector(selectRoute);
     return (
         <div
             onMouseLeave={() => {
                 setIsExpanded(false);
             }}
-            className={`card ${style.wrapper} ${isExpanded ? style.expanded : null}`}
+            className={`${style.wrapper} ${isExpanded ? style.expanded : null}`}
         >
             <IconLink
                 onClick={() => {
@@ -26,6 +32,18 @@ const MarketSideBar = (props: Props) => {
                 icon={HiMenu}
                 title="Свернуть"
             ></IconLink>
+            {search ? (
+                <NavLink
+                    to={`${searchRoute}${route || ''}?${searchQueryParam}=${search}`}
+                    className={opt => {
+                        return opt.isActive
+                            ? `${style.market_link} ${style.active}`
+                            : style.market_link;
+                    }}
+                >
+                    <IconLink isExpanded={isExpanded} icon={HiSearch} title={'Поиск'} />
+                </NavLink>
+            ) : null}
             {props.options
                 ? props.options.map(o => (
                       <NavLink

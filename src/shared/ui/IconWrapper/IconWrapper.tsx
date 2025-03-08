@@ -7,10 +7,11 @@ const IconWrapper = (props: ButtonProps) => {
             onFocus={props.onFocus}
             onBlur={props.onBlur}
             onClick={props.onClick}
+            disabled={props.disabled}
             {...props}
             className={`
         ${style.icon}
-        ${props.className || null}
+        ${props.className || ''}
         `}
         ></button>
     );

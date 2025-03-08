@@ -20,10 +20,22 @@
 .wrapper button {
     background: transparent;
     position: absolute;
-    left: calc(var(--padding-inner) + calc(var(--padding-inner) / 2));
+
     top: 0;
     bottom: 0;
     pointer-events: none;
+}
+
+.wrapper button.search {
+    left: calc(var(--padding-inner) + calc(var(--padding-inner) / 2));
+}
+
+.wrapper button.active {
+    pointer-events: visible;
+}
+
+.wrapper button.close {
+    right: calc(var(--padding-inner) + calc(var(--padding-inner) / 2));
 }
 
 .wrapper input {

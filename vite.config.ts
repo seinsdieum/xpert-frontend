@@ -9,7 +9,10 @@ const __dirname = path.dirname(__filename);
 console.log(path.resolve(__dirname, './src'));
 export default defineConfig({
     resolve: {
-        alias: [{ find: '@', replacement: path.resolve(__dirname, './src') }]
+        alias: [
+            { find: '@', replacement: path.resolve(__dirname, './src') },
+            { find: '@DEV', replacement: path.resolve(__dirname, './dev') }
+        ]
     },
     plugins: [react()]
 });

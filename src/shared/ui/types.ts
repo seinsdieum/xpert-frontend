@@ -8,6 +8,7 @@ export interface ButtonProps {
     onBlur?: React.FocusEventHandler<HTMLButtonElement>;
     onMouseEnter?: React.MouseEventHandler<HTMLButtonElement>;
     onMouseLeave?: React.MouseEventHandler<HTMLButtonElement>;
+    disabled?: boolean;
     isActive?: boolean;
     className?: string;
 }

@@ -6,15 +6,20 @@ import { HomePage } from '@/pages/home';
 import { TaskPage } from '@/pages/tasks';
 import { SearchPage } from '@/pages/search';
 import { ChatPage } from '@/pages/chats';
+
 import {
     chatsRoute,
     homeRoute,
+    portfolioRoute,
+    profileRoute,
     searchRoute,
     signRoute,
     tasksRoute,
     usersRoute
 } from '@/shared/config';
 import { SignPage } from '@/pages/sign-in';
+import { Provider } from 'react-redux';
+import { store } from '@/entities/store';
 const router = createBrowserRouter([
     {
         path: `${homeRoute}`,
@@ -24,7 +29,9 @@ const router = createBrowserRouter([
             { path: `${tasksRoute}/*`, element: <TaskApp /> },
             { path: `${searchRoute}/*`, element: <SearchApp /> },
             { path: `${chatsRoute}/*`, element: <ChatApp /> },
-            { path: `${signRoute}/*`, element: <SignApp /> }
+            { path: `${signRoute}/*`, element: <SignApp /> },
+            { path: `${profileRoute}/*`, element: <ProfileApp /> },
+            { path: `${portfolioRoute}/*`, element: <PortfolioApp /> }
         ],
         element: <MarketLayout />
     }
@@ -61,13 +68,29 @@ function TaskApp() {
         </Routes>
     );
 }
+function PortfolioApp() {
+    return (
+        <Routes>
+            <Route path="" element={<h1>Not Implemented</h1>}></Route>
+        </Routes>
+    );
+}
+function ProfileApp() {
+    return (
+        <Routes>
+            <Route path="" element={<h1>Not Implemented</h1>}></Route>
+        </Routes>
+    );
+}
 
 function SearchApp() {
     return (
         <Routes>
             <Route path="" element={<SearchPage />}>
-                <Route index element={<div>все</div>}></Route>
-                <Route path={usersRoute} element={<div>userы</div>}></Route>
+                <Route index element={<div>not implemented</div>}></Route>
+                <Route path={usersRoute} element={<div>not implemented</div>}></Route>
+                <Route path={portfolioRoute} element={<div>not implemented</div>}></Route>
+                <Route path={tasksRoute} element={<div>not implemented</div>}></Route>
             </Route>
         </Routes>
     );
@@ -82,7 +105,11 @@ function SignApp() {
 }
 
 function App() {
-    return <RouterProvider router={router}></RouterProvider>;
+    return (
+        <Provider store={store}>
+            <RouterProvider router={router}></RouterProvider>
+        </Provider>
+    );
 }
 
 export default App;
