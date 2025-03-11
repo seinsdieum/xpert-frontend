@@ -24,4 +24,5 @@ export const searchSlice = createSlice({
 
 export const { changeRoute, changeSearch } = searchSlice.actions;
 export const selectSearch = (state: RootState) => state.search.search;
+export const searchActions = searchSlice.actions;
 export const selectRoute = (state: RootState) => state.search.route;

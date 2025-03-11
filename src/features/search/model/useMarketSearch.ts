@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Suggestion } from './types';
+import { SearchSuggestion } from './types';
 import fetchSuggestions from '../api/mocks/fetchSuggestions';
 
 const useMarketSearch = (startCb?: () => void, endCb?: () => void) => {
-    const [results, setResults] = useState<Suggestion[]>([]);
+    const [results, setResults] = useState<SearchSuggestion[]>([]);
 
     const search = function (query: string) {
         startCb?.();

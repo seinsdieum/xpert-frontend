@@ -45,8 +45,8 @@
 :root {
     /* animations */
     --anim-1: 0.1s ease-in-out;
-    --anim-2: 1.1s ease-in-out;
-    --anim-3: 1.8s ease-in-out;
+    --anim-2: 0.4s ease-in-out;
+    --anim-3: 1.1s ease-in-out;
 
     --anim-1-linear: 0.1s;
     --anim-2-linear: 1.1s;

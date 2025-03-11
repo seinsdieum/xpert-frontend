@@ -5,9 +5,8 @@
     display: flex;
     position: relative;
     overflow-y: scroll;
-    flex: 0.2;
-    flex-grow: 1;
     gap: 0;
+    justify-content: center;
 }
 
 .layout_wrapper {

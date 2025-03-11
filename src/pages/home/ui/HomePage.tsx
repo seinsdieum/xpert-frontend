@@ -1,94 +1,87 @@
 import { MarketPage } from '@/widgets/page';
-import { Button, Card, ImageGroup } from '@/shared/ui';
+import { Button, Card, ImageGroup, InlineWrapper } from '@/shared/ui';
 import { IconWrapper, Image } from '@/shared/ui/';
-import { HiCog } from 'react-icons/hi';
+import { HiChatAlt, HiChatAlt2, HiCog, HiStar, HiUser } from 'react-icons/hi';
 import style from './HomePage.module.css';
 import { fishImage } from '@/assets/demo/images';
+import { Link } from 'react-router-dom';
 const HomePage = () => {
     return (
         <MarketPage className={style.wrapper}>
-            <h1>Привет!</h1>
-            <h2>Hola!</h2>
-            <h3>Hello!</h3>
-            <p className="bold">Бонжур епте</p>
             <Card>
                 <ImageGroup srcCollection={[fishImage, fishImage, fishImage, fishImage]} />
-                <p>Требуется Frontend-разработчик. Интересует? Подробнее в директ!</p>
-                <Button className="inner">sdfd</Button>
+                <div className="card">
+                    <p>
+                        Требуется Frontend-разработчик. Интересует? Подробнее в директ! ищем
+                        талантливых ывыва фывфыв авыафжы фыа фывфыаф фыафызащывь ыфвьфыв фыв фыв
+                        фывф ызвфы
+                    </p>
+                </div>
+                <InlineWrapper>
+                    <Link>
+                        <Button className="inner">
+                            <InlineWrapper>
+                                <IconWrapper>
+                                    <HiUser />
+                                </IconWrapper>
+                                <p>alexellipse</p>
+                            </InlineWrapper>
+                        </Button>
+                    </Link>
+                    <Link>
+                        <Button isActive className="inner">
+                            <InlineWrapper>
+                                <IconWrapper>
+                                    <HiChatAlt2 />
+                                </IconWrapper>
+                                <p>Написать</p>
+                            </InlineWrapper>
+                        </Button>
+                    </Link>
+                </InlineWrapper>
             </Card>
-            <Button>Перейти</Button>
-            <div className="card">
-                <h1>Привет!</h1>
-                <IconWrapper>
-                    <HiCog />
-                </IconWrapper>
-                <p>Бонжур епте sd fsf sdfasdf asdf asdf asdfasd sdf </p>
-                <input className="inner" type="text"></input>
-                <div className="buttons">
-                    <button className="inner">Подробнее</button>
-                    <button className="inner">Подробнее</button>
+            <Card>
+                <ImageGroup srcCollection={[fishImage, fishImage, fishImage, fishImage]} />
+                <div className="card">
+                    <p>
+                        Требуется Frontend-разработчик. Интересует? Подробнее в директ! ищем
+                        талантливых ывыва фывфыв авыафжы фыа фывфыаф фыафызащывь ыфвьфыв фыв фыв
+                        фывф ызвфы
+                    </p>
                 </div>
-            </div>
-            <div className="card">
-                <h1>Привет!</h1>
-                <IconWrapper>
-                    <HiCog />
-                </IconWrapper>
-                <p>Бонжур епте sd fsf sdfasdf asdf asdf asdfasd sdf </p>
-                <input className="inner" type="text"></input>
-                <div className="buttons">
-                    <button className="inner">Подробнее</button>
-                    <button className="inner">Подробнее</button>
-                </div>
-            </div>
-            <div className="card">
-                <h1>Привет!</h1>
-                <IconWrapper>
-                    <HiCog />
-                </IconWrapper>
-                <p>Бонжур епте sd fsf sdfasdf asdf asdf asdfasd sdf </p>
-                <input className="inner" type="text"></input>
-                <div className="buttons">
-                    <button className="inner">Подробнее</button>
-                    <button className="inner">Подробнее</button>
-                </div>
-            </div>
-            <div className="card">
-                <h1>Привет!</h1>
-                <IconWrapper>
-                    <HiCog />
-                </IconWrapper>
-                <p>Бонжур епте sd fsf sdfasdf asdf asdf asdfasd sdf </p>
-                <input className="inner" type="text"></input>
-                <div className="buttons">
-                    <button className="inner">Подробнее</button>
-                    <button className="inner">Подробнее</button>
-                </div>
-            </div>
-            <div className="card">
-                <h1>Привет!</h1>
-                <IconWrapper>
-                    <HiCog />
-                </IconWrapper>
-                <p>Бонжур епте sd fsf sdfasdf asdf asdf asdfasd sdf </p>
-                <input className="inner" type="text"></input>
-                <div className="buttons">
-                    <button className="inner">Подробнее</button>
-                    <button className="inner">Подробнее</button>
-                </div>
-            </div>
-            <div className="card">
-                <h1>Привет!</h1>
-                <IconWrapper>
-                    <HiCog />
-                </IconWrapper>
-                <p>Бонжур епте sd fsf sdfasdf asdf asdf asdfasd sdf </p>
-                <input className="inner" type="text"></input>
-                <div className="buttons">
-                    <button className="inner">Подробнее</button>
-                    <button className="inner">Подробнее</button>
-                </div>
-            </div>
+                <InlineWrapper>
+                    <Link>
+                        <Button className="inner">
+                            <InlineWrapper>
+                                <IconWrapper>
+                                    <HiUser />
+                                </IconWrapper>
+                                <p>alexellipse</p>
+                            </InlineWrapper>
+                        </Button>
+                    </Link>
+                    <Link>
+                        <Button className="inner">
+                            <InlineWrapper>
+                                <IconWrapper>
+                                    <HiStar />
+                                </IconWrapper>
+                                <p>4.2</p>
+                            </InlineWrapper>
+                        </Button>
+                    </Link>
+                    <Link>
+                        <Button className="inner">
+                            <InlineWrapper>
+                                <IconWrapper>
+                                    <HiChatAlt2 />
+                                </IconWrapper>
+                                <p>К обсуждению</p>
+                            </InlineWrapper>
+                        </Button>
+                    </Link>
+                </InlineWrapper>
+            </Card>
         </MarketPage>
     );
 };

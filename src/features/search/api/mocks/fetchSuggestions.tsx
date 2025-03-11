@@ -1,6 +1,6 @@
-import { Suggestion } from '../../model/types';
+import { SearchSuggestion } from '../../model/types';
 
-async function fetchSuggestions(str: string, resultCb: (sugs: Suggestion[]) => void) {
+async function fetchSuggestions(str: string, resultCb: (sugs: SearchSuggestion[]) => void) {
     if (!str) {
         resultCb([]);
     } else {

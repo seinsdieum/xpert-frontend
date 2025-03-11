@@ -3,7 +3,7 @@ export interface SearchState {
     route: string;
 }
 
-export type Suggestion = {
+export type SearchSuggestion = {
     title: string;
     route?: string;
 };
