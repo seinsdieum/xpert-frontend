@@ -5,10 +5,12 @@ import MarketHeader from './MarketHeader';
 import { sideBarLinks } from '../model/sidebar';
 import { useHotKey } from '@/shared/lib';
 import { chatsRoute, homeRoute, tasksRoute } from '@/shared/config';
+import { useSelector } from 'react-redux';
+import { selectAccount } from '@/entities/auth';
 
 const MarketLayout = () => {
     const navigate = useNavigate();
-
+    const authState = useSelector(selectAccount);
     useHotKey(
         ['Alt', 'c'],
         () => {
@@ -34,7 +36,7 @@ const MarketLayout = () => {
         <div className={style.layout_wrapper}>
             <MarketHeader></MarketHeader>
             <div className={style.wrapper}>
-                <MarketSideBar options={sideBarLinks}></MarketSideBar>
+                {authState && <MarketSideBar options={sideBarLinks}></MarketSideBar>}
                 <Outlet></Outlet>
             </div>
         </div>

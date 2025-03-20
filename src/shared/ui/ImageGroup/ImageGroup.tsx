@@ -4,18 +4,21 @@ import { stubImage } from '@/assets/product/images';
 
 type Props = {
     srcCollection: string[];
+
     inner?: boolean;
+    onImageClick?: (index: number) => void;
 };
 
 const MAX_IMAGES = 3;
 
-const ImageGroup = memo(({ srcCollection }: Props) => {
+const ImageGroup = memo(({ srcCollection, onImageClick, inner }: Props) => {
     if (!srcCollection.length) return null;
 
     return (
         <>
             <div className={style.wrapper}>
                 <img
+                    onClick={() => onImageClick?.(0)}
                     className={style.big}
                     src={srcCollection[0]}
                     alt=""
@@ -26,6 +29,7 @@ const ImageGroup = memo(({ srcCollection }: Props) => {
                     <div className={style.stack}>
                         {srcCollection.slice(1, MAX_IMAGES).map((src, index) => (
                             <img
+                                onClick={() => onImageClick?.(index + 1)}
                                 key={index}
                                 src={src}
                                 alt=""

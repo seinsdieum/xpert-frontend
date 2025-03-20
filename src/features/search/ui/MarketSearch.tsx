@@ -6,7 +6,7 @@ import useMarketSearch from '../model/useMarketSearch';
 import { useClassName, useDebounce, useHotKey, useThrottle } from '@/shared/lib';
 import { Link, useNavigate } from 'react-router-dom';
 import { homeRoute, searchRoute } from '@/shared/config';
-import { changeRoute, changeSearch, selectRoute, selectSearch } from '../model/searchSlice';
+import { changeRoute, changeSearch, selectRoute, selectSearch } from '../model/search-slice';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { searchQueryParam } from '../config';

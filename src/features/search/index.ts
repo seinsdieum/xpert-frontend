@@ -6,7 +6,7 @@ import {
     changeRoute,
     searchSlice,
     searchActions
-} from './model/searchSlice';
+} from './model/search-slice';
 
 import { SearchState, SearchSuggestion } from './model/types';
 import { searchQueryParam } from './config';

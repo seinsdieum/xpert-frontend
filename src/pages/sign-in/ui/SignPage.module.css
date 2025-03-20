@@ -1,0 +1,41 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.form_wrapper {
+    margin-top: calc(var(--padding) * 2);
+    height: 600px;
+    background-color: var(--color-second);
+    border-radius: var(--radius);
+    padding: calc(var(--padding) * 2);
+    gap: var(--padding);
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-box-shadow: 0px 5px 30px -4px rgba(34, 60, 80, 0.1);
+    -moz-box-shadow: 0px 5px 30px -4px rgba(34, 60, 80, 0.1);
+    box-shadow: 0px 5px 30px -4px rgba(34, 60, 80, 0.1);
+}
+
+.auth_label {
+    font-weight: 400;
+    align-self: center;
+}
+
+.switcher {
+    color: var(--color-placeholder);
+    align-self: center;
+    font-weight: 550;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.switcher:hover {
+    color: var(--color-text);
+}

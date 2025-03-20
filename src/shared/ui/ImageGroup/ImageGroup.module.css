@@ -4,12 +4,16 @@
     max-height: 400px;
     width: 100%;
     border-radius: var(--radius-inner);
-    overflow: hidden;
+}
+
+.wrapper img {
+    border-radius: var(--radius-inner);
 }
 
 .wrapper > img:first-child:last-child {
     width: 100%;
 }
+
 .stack {
     flex: 1;
     width: 100%;
@@ -28,9 +32,6 @@
 
 .stack > button {
     height: calc(100% / 6);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
     border: none;
     background-color: var(--color-third);
     transition: var(--anim-1);

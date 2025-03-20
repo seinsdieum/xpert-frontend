@@ -1,6 +1,14 @@
 .button {
     transition: var(--anim-1);
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--padding-inner);
+    height: 100%;
+}
+.button svg {
+    font-size: var(--font-h2-size);
 }
 .button:hover {
     background-color: var(--color-third);

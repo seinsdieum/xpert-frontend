@@ -1,0 +1,38 @@
+.wrapper {
+    position: relative;
+    display: flex;
+}
+
+.wrapper input {
+    padding-top: calc(calc(var(--padding-inner) / 2) + var(--padding-inner) * 2);
+}
+
+.wrapper .label {
+    color: var(--color-placeholder);
+    position: absolute;
+    pointer-events: none;
+    align-self: center;
+    padding-left: var(--padding);
+    transition: var(--anim-1);
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.label.active,
+.wrapper:has(input:focus) .label {
+    font-weight: bold;
+    padding-bottom: calc(var(--padding-inner) * 2);
+    font-size: 10px;
+}
+
+.wrapper.invalid input {
+    transition: var(--anim-1);
+    border: 1px solid red;
+}
+
+.wrapper.required .label::after {
+    pointer-events: none;
+    content: ' *';
+    color: red;
+}

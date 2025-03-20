@@ -1,4 +1,11 @@
-import { createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
+import {
+    createBrowserRouter,
+    Navigate,
+    Outlet,
+    Route,
+    RouterProvider,
+    Routes
+} from 'react-router-dom';
 import './App.css';
 import { UserPage } from '@/pages/users';
 import { MarketLayout } from '@/widgets/marketLayout';
@@ -9,6 +16,7 @@ import { ChatPage } from '@/pages/chats';
 
 import {
     chatsRoute,
+    createRoute,
     homeRoute,
     portfolioRoute,
     profileRoute,
@@ -19,19 +27,25 @@ import {
 } from '@/shared/config';
 import { SignPage } from '@/pages/sign-in';
 import { Provider } from 'react-redux';
-import { store } from '@/entities/store';
+import { store } from '@/app/store';
+import { MarketFeed } from '@/widgets/post-feed';
+import { feedRoute } from '@/shared/config/frontend';
+import { CreatePost } from '@/widgets/create-post';
+import { useSelector } from 'react-redux';
+import { selectAccount } from '@/entities/auth';
 const router = createBrowserRouter([
     {
         path: `${homeRoute}`,
         children: [
             { index: true, element: <HomeApp /> },
-            { path: `${usersRoute}/*`, element: <UserApp /> },
-            { path: `${tasksRoute}/*`, element: <TaskApp /> },
-            { path: `${searchRoute}/*`, element: <SearchApp /> },
-            { path: `${chatsRoute}/*`, element: <ChatApp /> },
+            { path: `${usersRoute}/*`, element: <PrivateRoute route={<UserApp />} /> },
+            { path: `${tasksRoute}/*`, element: <PrivateRoute route={<TaskApp />} /> },
+            { path: `${searchRoute}/*`, element: <PrivateRoute route={<SearchApp />} /> },
+            { path: `${chatsRoute}/*`, element: <PrivateRoute route={<ChatApp />} /> },
             { path: `${signRoute}/*`, element: <SignApp /> },
-            { path: `${profileRoute}/*`, element: <ProfileApp /> },
-            { path: `${portfolioRoute}/*`, element: <PortfolioApp /> }
+            { path: `${profileRoute}/*`, element: <PrivateRoute route={<ProfileApp />} /> },
+            { path: `${portfolioRoute}/*`, element: <PrivateRoute route={<PortfolioApp />} /> },
+            { path: `${feedRoute}/*`, element: <FeedApp /> }
         ],
         element: <MarketLayout />
     }
@@ -40,7 +54,23 @@ const router = createBrowserRouter([
 function HomeApp() {
     return (
         <Routes>
-            <Route index element={<HomePage />}></Route>
+            <Route path="" element={<Navigate to={feedRoute} />}></Route>
+        </Routes>
+    );
+}
+
+function PrivateRoute(props: { route: React.ReactNode }) {
+    const authState = useSelector(selectAccount);
+    return authState ? props.route : <Navigate to={signRoute} />;
+}
+
+function FeedApp() {
+    return (
+        <Routes>
+            <Route path="" element={<HomePage />}>
+                <Route index element={<MarketFeed />} />
+                <Route path={createRoute} element={<PrivateRoute route={<CreatePost />} />} />
+            </Route>
         </Routes>
     );
 }
@@ -86,7 +116,7 @@ function ProfileApp() {
 function SearchApp() {
     return (
         <Routes>
-            <Route path="" element={<SearchPage />}>
+            <Route path="" element={<PrivateRoute route={<SearchPage />}></PrivateRoute>}>
                 <Route index element={<div>not implemented</div>}></Route>
                 <Route path={usersRoute} element={<div>not implemented</div>}></Route>
                 <Route path={portfolioRoute} element={<div>not implemented</div>}></Route>

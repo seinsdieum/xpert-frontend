@@ -1,0 +1,80 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: var(--padding-inner);
+}
+
+.wrapper .element {
+    border-radius: var(--radius-inner);
+    flex: 2 20%;
+    min-width: 10%;
+    transition: var(--anim-1);
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.wrapper .element button {
+    opacity: 0;
+    padding: 0;
+    font-size: var(--font-h3-size);
+    width: var(--font-h3-size);
+    height: var(--font-h3-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-text);
+    color: var(--color-second);
+    border: none;
+    /* position */
+    position: absolute;
+    top: calc(-1 * calc(var(--font-size) / 2));
+    left: calc(-1 * calc(var(--font-size) / 2));
+}
+
+.wrapper .element.dragged {
+    transition: none;
+    background-color: var(--color-text);
+}
+
+.wrapper .element.dragged img {
+    opacity: 0;
+}
+
+.wrapper .element .info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: var(--radius-inner);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wrapper .element .info.loading {
+    z-index: 1;
+    background: var(--accent);
+}
+.wrapper .element .info.failed {
+    background: red;
+}
+.wrapper .element .info.success {
+    background: green;
+}
+
+.wrapper .element img {
+    border-radius: var(--radius-inner);
+}
+.wrapper .element:hover {
+    transform: scale(1.01);
+}
+
+.wrapper .element:hover button {
+    z-index: 5;
+    opacity: 1;
+}

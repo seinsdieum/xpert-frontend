@@ -59,6 +59,34 @@ button {
     text-align: center;
 }
 
+textarea {
+    border-radius: var(--radius);
+    padding: calc(var(--padding-inner) * 2);
+    background-color: var(--color-second);
+    color: var(--color-text);
+    border: 1px solid var(--color-separate);
+    width: 100%;
+    height: 100%;
+    resize: none;
+    font-family: inherit;
+    font-size: var(--font-p-size);
+}
+textarea.inner {
+    border-radius: var(--radius-inner);
+    padding: var(--padding-inner);
+    background-color: var(--color-main);
+}
+textarea.empty {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+textarea:focus {
+    outline: none;
+}
+
 button:disabled {
     opacity: 0.6;
 }
@@ -88,6 +116,8 @@ input:focus {
         --color-third: var(--color-third-light);
         --color-text: var(--color-text-light);
         --color-separate: var(--color-separate-light);
+        --color-placeholder: var(--color-placeholder-light);
+        --color-second-transparent: var(--color-second-transparent-light);
     }
 }
 
@@ -98,5 +128,7 @@ input:focus {
         --color-third: var(--color-third-dark);
         --color-text: var(--color-text-dark);
         --color-separate: var(--color-separate-dark);
+        --color-placeholder: var(--color-placeholder-dark);
+        --color-second-transparent: var(--color-second-transparent-dark);
     }
 }

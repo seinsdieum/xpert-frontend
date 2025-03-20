@@ -4,3 +4,8 @@
     gap: var(--padding-inner);
     align-items: center;
 }
+
+.wrapper.between {
+    width: 100%;
+    justify-content: space-between !important;
+}

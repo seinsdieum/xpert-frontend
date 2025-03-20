@@ -15,6 +15,13 @@ import { ButtonProps } from './types';
 import { SideBarLinkProps } from './types';
 import { ContainerProps } from './types';
 import ImageGroup from './ImageGroup/ImageGroup';
+import TextArea from './TextArea/TextArea';
+import ImagePreview from './ImagePreview/ImagePreview';
+import FieldInput from './FieldInput/FieldInput';
+import ImageSlider from './ImageSlider/ui/ImageSlider';
+import ImagePack from './ImagePack/ui/ImagePack';
+import NotificationCentered from './NotificationCentered/ui/NotificationCentered';
+
 export {
     Button,
     IconButton,
@@ -25,7 +32,13 @@ export {
     CIrcleLoader,
     Card,
     Image,
-    ImageGroup
+    ImageGroup,
+    ImagePack,
+    TextArea,
+    ImagePreview,
+    FieldInput,
+    ImageSlider,
+    NotificationCentered
 };
 export type { ButtonProps, SideBarLinkProps, ContainerProps };
 export { InlineWrapper };

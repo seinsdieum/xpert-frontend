@@ -1,2 +1,26 @@
 .wrapper {
+    display: grid;
+    gap: var(--padding-inner);
+    grid-template-columns: 0.6fr 0.2fr;
+    max-width: 80vw;
+    justify-content: center;
+    min-width: 80vw;
+}
+
+.sidebar,
+.center_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-inner);
+}
+.sidebar > * {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-inner);
+    position: sticky;
+    top: calc(var(--padding) - 0.5px);
+}
+
+.sidebar > * > button {
+    background-color: var(--color-second);
 }

@@ -56,6 +56,15 @@ p {
 button.inner {
     background: var(--color-third);
     border-radius: var(--radius-inner);
+    padding: calc(var(--padding-inner) / 2) var(--padding-inner);
+}
+
+.stepped {
+    padding-left: var(--padding-inner);
+}
+
+button.inner:hover {
+    background: var(--color-separate);
 }
 
 input.inner {

@@ -1,0 +1,40 @@
+.navigation {
+    overflow-y: hidden;
+}
+.tasks {
+}
+
+.navigation > button,
+.tasks > button {
+    width: 100%;
+    justify-content: flex-start;
+}
+.navigation > button {
+    border: none;
+    background-color: transparent;
+}
+
+.create_wrapper > button {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+@keyframes appear_create {
+    from {
+        margin-top: -100%;
+        z-index: -1;
+    }
+    to {
+        margin-top: 0;
+        z-index: 1;
+    }
+}
+
+.create_wrapper {
+    width: 100%;
+}
+
+.create_wrapper > * {
+    margin-top: 0;
+    animation: appear_create var(--anim-1);
+}

@@ -8,8 +8,14 @@ const Button = (props: Props) => {
     const propsClassName = useClassName(props.className != undefined, props.className);
     return (
         <button
-            {...props}
+            onMouseLeave={props.onMouseLeave}
+            onMouseEnter={props.onMouseEnter}
+            onBlur={props.onBlur}
+            onClick={props.onClick}
+            onFocus={props.onFocus}
+            disabled={props.disabled}
             className={`${style.button} ${activeClassName} ${propsClassName}`}
+            children={props.children}
         ></button>
     );
 };

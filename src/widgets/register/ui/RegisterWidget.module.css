@@ -1,0 +1,20 @@
+.wrapper {
+    display: flex;
+    gap: var(--padding-inner);
+    flex-direction: column;
+    width: 400px;
+}
+
+.wrapper > * {
+    width: 100% !important;
+}
+
+.wrapper button {
+    width: 100%;
+}
+
+.switch_section {
+    display: inherit;
+    flex-direction: inherit;
+    gap: inherit;
+}

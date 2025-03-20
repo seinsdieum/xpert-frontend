@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { SearchState } from './types';
-import { RootState } from '@/entities/store';
-
+import { RootState } from '@/shared/config';
 const initialState: SearchState = {
     search: '',
     route: ''

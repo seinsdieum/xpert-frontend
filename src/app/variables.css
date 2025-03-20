@@ -4,21 +4,27 @@
 
     --color-main-dark: hsl(0, 0%, 8%);
     --color-second-dark: hsl(0, 0%, 13%);
+    --color-second-transparent-dark: rgba(33, 33, 33, 0.8);
     --color-third-dark: hsl(0, 0%, 18%);
     --color-separate-dark: hsl(0, 0%, 22%);
     --color-text-dark: hsl(0, 0%, 86%);
+    --color-placeholder-dark: hsl(0, 0%, 50%);
 
     --color-main-light: hsl(0, 0%, 94%);
     --color-second-light: hsl(0, 0%, 98%);
+    --color-second-transparent-light: rgba(250, 250, 250, 0.8);
     --color-third-light: hsl(0, 0%, 91%);
     --color-text-light: rgb(30, 30, 30);
     --color-separate-light: hsl(0, 0%, 86%);
+    --color-placeholder-light: hsl(0, 0%, 50%);
 
     --color-main: var(--color-main-dark);
     --color-second: var(--color-second-dark);
     --color-third: var(--color-third-dark);
     --color-text: var(--color-text-dark);
     --color-separate: var(--color-separate-dark);
+    --color-placeholder: var(--color-placeholder-dark);
+    --color-second-transparent: var(var(--color-second-transparent-dark));
 }
 
 :root {

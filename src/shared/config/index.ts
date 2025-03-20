@@ -13,9 +13,12 @@ import {
     typeRoute,
     postsRoute,
     portfolioRoute,
-    profileRoute
+    profileRoute,
+    createRoute
 } from './frontend';
 
+import { RootState } from './storeTypes';
+import { AppDispatch } from './storeTypes';
 /* export */
 export {
     backendBaseUrl,
@@ -29,5 +32,8 @@ export {
     typeRoute,
     postsRoute,
     portfolioRoute,
-    profileRoute
+    profileRoute,
+    createRoute
 };
+
+export type { RootState, AppDispatch };

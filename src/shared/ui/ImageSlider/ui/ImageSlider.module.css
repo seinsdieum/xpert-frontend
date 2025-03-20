@@ -1,0 +1,100 @@
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    gap: 0;
+    padding: 0;
+    border-radius: var(--radius-inner);
+    position: relative;
+    transition: var(--anim-1);
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.wrapper button.left,
+.wrapper button.right {
+    width: var(--font-h3-size);
+    height: var(--font-h3-size);
+    padding: 0;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-size: var(--font-h2-size);
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-second-transparent);
+}
+.wrapper button.left {
+    left: var(--padding-inner);
+}
+.wrapper button.right {
+    right: var(--padding-inner);
+}
+
+.control {
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+}
+
+.wrapper::after {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    content: '-';
+    color: transparent;
+    pointer-events: none;
+    -webkit-box-shadow: transparent;
+    -moz-box-shadow: transparent;
+    box-shadow: transparent;
+    transition: var(--anim-1);
+}
+
+.wrapper:hover .control {
+    opacity: 1;
+}
+
+.slider {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: var(--anim-2);
+}
+
+.slider img {
+    width: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: var(--radius-inner);
+}
+
+.editing {
+    position: absolute;
+    bottom: var(--padding-inner);
+    right: var(--padding-inner);
+    --container-radius: calc(var(--radius-inner) - var(--padding-inner));
+    border-radius: var(--container-radius);
+    z-index: 1000;
+    background-color: var(--color-second);
+    padding: calc(var(--padding-inner) / 4);
+    gap: 0;
+}
+
+.editing > * {
+    background-color: transparent;
+    border: none;
+    padding: calc(var(--padding-inner) / 2);
+    border-radius: calc(var(--container-radius) - calc(var(--padding-inner) / 4));
+    font-size: var(--font-h3-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editing > *:hover {
+    background: var(--color-third);
+}
