@@ -12,7 +12,6 @@ import {
     categoryRoute,
     typeRoute,
     postsRoute,
-    portfolioRoute,
     profileRoute,
     createRoute
 } from './frontend';
@@ -31,7 +30,6 @@ export {
     categoryRoute,
     typeRoute,
     postsRoute,
-    portfolioRoute,
     profileRoute,
     createRoute
 };

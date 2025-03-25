@@ -1,6 +1,6 @@
 :root {
     /* colors */
-    --accent: hsla(253, 70%, 63%, 1);
+    --accent: #7b5fe3;
 
     --color-main-dark: hsl(0, 0%, 8%);
     --color-second-dark: hsl(0, 0%, 13%);

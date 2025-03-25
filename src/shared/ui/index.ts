@@ -21,7 +21,8 @@ import FieldInput from './FieldInput/FieldInput';
 import ImageSlider from './ImageSlider/ui/ImageSlider';
 import ImagePack from './ImagePack/ui/ImagePack';
 import NotificationCentered from './NotificationCentered/ui/NotificationCentered';
-
+import Modal from './Modal/Modal';
+import Loader from './Loader/Loader';
 export {
     Button,
     IconButton,
@@ -38,7 +39,9 @@ export {
     ImagePreview,
     FieldInput,
     ImageSlider,
-    NotificationCentered
+    NotificationCentered,
+    Modal,
+    Loader
 };
 export type { ButtonProps, SideBarLinkProps, ContainerProps };
 export { InlineWrapper };

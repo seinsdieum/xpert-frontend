@@ -1,3 +1,3 @@
-import MarketPage from './ui/MarketPage';
+import PageWidget from './ui/PageWidget';
 
-export { MarketPage };
+export { PageWidget };

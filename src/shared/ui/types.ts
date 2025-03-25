@@ -37,6 +37,7 @@ export interface EditProps {
     onEdit?: (index: number) => void;
     onView?: (index: number) => void;
     onSwap?: (indexFrom: number, indexTo: number) => void;
+    onDownload?: (index: number) => void;
 }
 
 export interface ImageCollectionProps {

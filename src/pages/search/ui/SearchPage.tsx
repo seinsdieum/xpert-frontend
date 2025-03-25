@@ -1,5 +1,5 @@
 import { IconWrapper, InlineWrapper } from '@/shared/ui';
-import { MarketPage } from '@/widgets/page';
+import { PageWidget } from '@/widgets/page';
 import { HiSearch } from 'react-icons/hi';
 import { Outlet } from 'react-router-dom';
 import SearchRouteButton from './SearchRouteButton';
@@ -9,7 +9,7 @@ import useSearchPage from '../model/useSearchPage';
 const SearchPage = () => {
     const search = useSearchPage();
     return (
-        <MarketPage>
+        <PageWidget>
             <InlineWrapper>
                 <IconWrapper disabled>
                     <HiSearch />
@@ -28,7 +28,7 @@ const SearchPage = () => {
                 ))}
             </InlineWrapper>
             <Outlet></Outlet>
-        </MarketPage>
+        </PageWidget>
     );
 };
 

@@ -1,3 +1,3 @@
 import logoIcon from './logo.svg';
-
-export { logoIcon };
+import spinner from './spinner.svg';
+export { logoIcon, spinner };

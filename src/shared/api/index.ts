@@ -1,4 +1,11 @@
 import baseStateApi from './baseStateApi';
-import storageApi from './client';
-import { storageApiConfig, uploadFile } from './client';
-export { baseStateApi, storageApi, storageApiConfig, uploadFile };
+import { postApi, postPost, putPost } from './client';
+import { authHeader, uploadPostFile } from './client';
+export {
+    baseStateApi,
+    postApi,
+    postPost,
+    putPost,
+    authHeader as authConfig,
+    uploadPostFile as uploadFile
+};

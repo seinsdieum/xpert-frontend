@@ -1,4 +1,4 @@
-import { ChangeEventHandler, useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import style from './TextArea.module.css';
 import { useClassName } from '@/shared/lib';
 interface TextAreaProps {

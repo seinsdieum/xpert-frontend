@@ -1,4 +1,4 @@
-import { ChangeEvent, ChangeEventHandler, useMemo } from 'react';
+import { ChangeEventHandler, useMemo } from 'react';
 import style from './FieldInput.module.css';
 import { useClassName } from '@/shared/lib';
 type Props = {

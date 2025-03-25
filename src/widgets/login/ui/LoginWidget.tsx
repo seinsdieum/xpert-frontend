@@ -1,8 +1,7 @@
-import { useLoginMutation, useRegisterMutation } from '@/entities/auth';
+import { useLoginMutation } from '@/entities/auth';
 import { useState } from 'react';
 import style from './LoginWidget.module.css';
 import { Button, FieldInput, InlineWrapper } from '@/shared/ui';
-import { validatePassword, validateUsername } from '@/shared/lib';
 import { HiChevronRight } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
 import { feedRoute } from '@/shared/config/frontend';

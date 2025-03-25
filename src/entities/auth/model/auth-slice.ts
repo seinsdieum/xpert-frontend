@@ -32,6 +32,10 @@ export const authSlice = createSlice({
             .addMatcher(authApi.endpoints.register.matchFulfilled, (state, { payload }) => {
                 localStorage.setItem('account', JSON.stringify(payload));
                 state.account = payload;
+            })
+            .addMatcher(authApi.endpoints.verify.matchRejected, state => {
+                localStorage.removeItem('account');
+                state.account = undefined;
             });
     }
 });

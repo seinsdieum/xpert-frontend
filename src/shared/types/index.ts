@@ -27,6 +27,11 @@ export interface TaskEntity {
     user?: Partial<UserEntity>;
 }
 
+export interface CreatePostDto {
+    body?: string;
+    task_id?: number;
+}
+
 export interface PostEntity {
     id: number;
     body: string;
@@ -35,15 +40,9 @@ export interface PostEntity {
     created_at: string;
     modified_at: string;
 
+    post_image?: FileEntity[];
     user?: Partial<UserEntity>;
     task?: Partial<TaskEntity>;
-}
-
-export interface CreatePostEntity extends PostEntity {
-    images: string[];
-}
-export interface UpdatePostEntity extends Partial<PostEntity> {
-    images?: string[];
 }
 
 export interface FileEntity {

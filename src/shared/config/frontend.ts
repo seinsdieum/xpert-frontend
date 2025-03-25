@@ -5,7 +5,6 @@ export const profileRoute = '/profile';
 export const searchRoute = '/search';
 export const tasksRoute = '/tasks';
 export const signRoute = '/sign';
-export const portfolioRoute = '/portfolio';
 
 export const createRoute = '/create';
 export const feedRoute = '/feed';

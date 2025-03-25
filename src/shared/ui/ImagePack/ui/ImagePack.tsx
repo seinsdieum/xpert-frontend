@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { ImageCollectionProps } from '../../types';
 import style from './ImagePack.module.css';
 import { HiX } from 'react-icons/hi';

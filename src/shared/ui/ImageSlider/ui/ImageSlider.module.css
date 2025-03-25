@@ -7,7 +7,7 @@
     position: relative;
     transition: var(--anim-1);
     width: 100%;
-    aspect-ratio: 1;
+    height: 40vh;
 }
 
 .wrapper button.left,

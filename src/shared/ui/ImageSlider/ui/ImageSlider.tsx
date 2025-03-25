@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import InlineWrapper from '../../InlineWrapper/InlineWrapper';
 import { ImageCollectionProps } from '../../types';
 
-const ImageSlider = ({ imagesSrc, editing }: ImageCollectionProps) => {
+const ImageSlider = ({ imagesSrc, editing, onClick }: ImageCollectionProps) => {
     const [pos, setPos] = useState(0);
     const ref = useRef(null);
     return (
@@ -15,8 +15,8 @@ const ImageSlider = ({ imagesSrc, editing }: ImageCollectionProps) => {
                 }}
                 className={style.slider}
             >
-                {imagesSrc?.map(x => (
-                    <img key={x} src={x} />
+                {imagesSrc?.map((x, index) => (
+                    <img onClick={() => onClick?.(index)} key={x} src={x} />
                 ))}
             </div>
             <button className={`${style.left} ${style.control}`}>

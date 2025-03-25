@@ -16,7 +16,13 @@ export const authApi = baseStateApi.injectEndpoints({
                 method: 'POST',
                 body
             })
+        }),
+        verify: build.query<AccountState, void>({
+            query: () => ({
+                url: '/auth/verify',
+                method: 'POST'
+            })
         })
     })
 });
-export const { useLoginMutation, useRegisterMutation } = authApi;
+export const { useLoginMutation, useRegisterMutation, useVerifyQuery } = authApi;

@@ -1,7 +1,7 @@
-import { MarketPage } from '@/widgets/page';
+import { PageWidget } from '@/widgets/page';
 
 const ChatPage = () => {
-    return <MarketPage></MarketPage>;
+    return <PageWidget></PageWidget>;
 };
 
 export default ChatPage;

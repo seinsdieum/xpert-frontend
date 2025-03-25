@@ -1,7 +1,5 @@
-import { FieldInput, IconWrapper, InlineWrapper } from '@/shared/ui';
 import style from './SignPage.module.css';
 import { RegisterWidget } from '@/widgets/register';
-import { HiLogin, HiUser } from 'react-icons/hi';
 import { useState } from 'react';
 import LoginWidget from '@/widgets/login/ui/LoginWidget';
 const SignPage = () => {

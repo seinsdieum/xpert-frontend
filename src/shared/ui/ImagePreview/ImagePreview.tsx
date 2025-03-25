@@ -1,25 +1,33 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import style from './ImagePreview.module.css';
-import { useHotKey } from '@/shared/lib';
 import { ImageCollectionProps } from '../types';
+import { HiDownload, HiPencil, HiTrash } from 'react-icons/hi';
+import { useHotKey } from '@/shared/lib';
+import InlineWrapper from '../InlineWrapper/InlineWrapper';
+import { AnimatePresence, motion } from 'motion/react';
 
 interface Props extends ImageCollectionProps {
     subtitle?: string;
-    position?: number;
-    onClose?: () => void;
+    position: number;
 }
 
-const ImagePreview = (props: Props) => {
-    const [position, setPosition] = useState(-1);
+const subtitleVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.3, delay: 0.3 } },
+    exit: { color: 'transparent' }
+};
 
-    const nextPos = () => {
+const ImagePreview = ({ editing, ...props }: Props) => {
+    const [position, setPosition] = useState(props.position);
+
+    const nextPos = useCallback(() => {
         setPosition(prev =>
             props.imagesSrc && prev < props.imagesSrc.length - 1 ? prev + 1 : prev
         );
-    };
-    const prevPos = () => {
+    }, []);
+    const prevPos = useCallback(() => {
         setPosition(prev => (prev > 0 ? prev - 1 : prev));
-    };
+    }, []);
     useEffect(() => {
         if (
             props.imagesSrc &&
@@ -31,21 +39,36 @@ const ImagePreview = (props: Props) => {
         else if (props.imagesSrc && props.imagesSrc.length > 0) setPosition(0);
     }, [props.position]);
 
-    useHotKey(['Escape'], props.onClose, true);
-    useHotKey(['ArrowRight'], nextPos, true);
-    useHotKey(['ArrowLeft'], prevPos, true);
+    useHotKey(['ArrowLeft'], () => prevPos(), true);
+    useHotKey(['ArrowRight'], () => nextPos(), true);
+
     return (
-        <div onFocusCapture={props.onClose} className={style.wrapper}>
-            {position > 0 && <button onClick={prevPos}>prev</button>}
+        <div className={style.wrapper}>
             <img src={props.imagesSrc?.[position]} />
-            {props.imagesSrc && position < props.imagesSrc.length - 1 && (
-                <button onClick={nextPos}>next</button>
+            {editing && (
+                <InlineWrapper className={style.bar}>
+                    {editing.onDownload && (
+                        <h2>
+                            <HiDownload onClick={() => editing.onDownload?.(position)} />
+                        </h2>
+                    )}
+                    {editing.onDelete && <HiTrash onClick={() => editing.onDelete?.(position)} />}
+                    {editing.onEdit && <HiPencil onClick={() => editing.onEdit?.(position)} />}
+                </InlineWrapper>
             )}
-            {props.subtitle && (
-                <div className={style.subtitle}>
-                    <p>{props.subtitle}</p>
-                </div>
-            )}
+            <AnimatePresence>
+                {props.subtitle !== undefined && (
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        variants={subtitleVariants}
+                        className={style.subtitle}
+                    >
+                        {props.subtitle}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

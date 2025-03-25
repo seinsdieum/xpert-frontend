@@ -12,4 +12,6 @@ export interface RegisterCredentials extends AuthCredentials {
 export interface AccountState {
     username: string;
     access_token: string;
+    id: number;
+    role: string;
 }

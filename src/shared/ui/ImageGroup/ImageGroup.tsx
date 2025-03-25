@@ -11,7 +11,7 @@ type Props = {
 
 const MAX_IMAGES = 3;
 
-const ImageGroup = memo(({ srcCollection, onImageClick, inner }: Props) => {
+const ImageGroup = memo(({ srcCollection, onImageClick }: Props) => {
     if (!srcCollection.length) return null;
 
     return (
