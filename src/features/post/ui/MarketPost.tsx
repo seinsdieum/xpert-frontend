@@ -1,24 +1,42 @@
-import { tasksRoute, usersRoute } from '@/shared/config';
-import { downloadFile } from '@/shared/lib/files';
-import { PostEntity } from '@/shared/types';
-import { Button, Card, ImagePreview, ImageSlider, InlineWrapper, Modal } from '@/shared/ui';
-import { useState } from 'react';
-import { HiArchive, HiAtSymbol, HiCheckCircle, HiStatusOnline } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
+import { tasksRoute, usersRoute } from '@/shared/config'
+import { downloadFile } from '@/shared/lib/files'
+import { ContextAction, PostEntity } from '@/shared/types'
+import {
+    Button,
+    Card,
+    ImagePreview,
+    ImageSlider,
+    InlineWrapper,
+    Modal
+} from '@/shared/ui'
+import { DropoverButton } from '@/shared/ui/DropoverButton'
+import { VerticalMenu } from '@/shared/ui'
+import { useState } from 'react'
+import {
+    HiArchive,
+    HiAtSymbol,
+    HiCheckCircle,
+    HiDotsHorizontal,
+    HiStatusOnline
+} from 'react-icons/hi'
+import { Link } from 'react-router-dom'
 
 type Props = {
-    payload: PostEntity;
-};
+    payload: PostEntity
+    options?: ContextAction[]
+}
 const MarketPost = (props: Props) => {
-    const [previewIndex, setPreviewIndex] = useState(-1);
+    const [previewIndex, setPreviewIndex] = useState(-1)
 
     return (
         <>
             <Modal
                 hideHeader
-                isOpen={previewIndex !== -1 && props.payload.post_image !== undefined}
-                onClose={() => setPreviewIndex(-1)}
-            >
+                isOpen={
+                    previewIndex !== -1 &&
+                    props.payload.post_image !== undefined
+                }
+                onClose={() => setPreviewIndex(-1)}>
                 {props.payload.post_image && (
                     <ImagePreview
                         subtitle={props.payload.body}
@@ -33,7 +51,8 @@ const MarketPost = (props: Props) => {
                         }}
                         position={previewIndex}
                         imagesSrc={props.payload.post_image.map(
-                            x => `http://localhost:3000/posts/image?name=${x.path}`
+                            x =>
+                                `http://localhost:3000/posts/image?name=${x.path}`
                         )}
                     />
                 )}
@@ -43,20 +62,22 @@ const MarketPost = (props: Props) => {
                     <ImageSlider
                         onClick={index => setPreviewIndex(index)}
                         imagesSrc={props.payload.post_image.map(
-                            x => `http://localhost:3000/posts/image?name=${x.path}`
+                            x =>
+                                `http://localhost:3000/posts/image?name=${x.path}`
                         )}
                     />
                 ) : (
                     ''
                 )}
-                <div className="card">
+                <div className='card'>
                     <p>{props.payload.body}</p>
                 </div>
                 <InlineWrapper spaceBetween>
                     <InlineWrapper>
                         {props.payload.user?.name && (
-                            <Link to={`${usersRoute}/${props.payload.user.name}`}>
-                                <Button className="inner">
+                            <Link
+                                to={`${usersRoute}/${props.payload.user.name}`}>
+                                <Button className='inner'>
                                     <HiAtSymbol />
                                     {props.payload.user.name}
                                 </Button>
@@ -65,12 +86,16 @@ const MarketPost = (props: Props) => {
                         {props.payload.task?.id && (
                             <Link to={`${tasksRoute}/${props.payload.task.id}`}>
                                 <Button
-                                    isActive={props.payload.task.task_status === 'pending'}
-                                    className="inner"
-                                >
-                                    {props.payload.task.task_status === 'pending' ? (
+                                    isActive={
+                                        props.payload.task.task_status ===
+                                        'pending'
+                                    }
+                                    className='inner'>
+                                    {props.payload.task.task_status ===
+                                    'pending' ? (
                                         <HiStatusOnline />
-                                    ) : props.payload.task.task_status === 'archived' ? (
+                                    ) : props.payload.task.task_status ===
+                                      'archived' ? (
                                         <HiArchive />
                                     ) : (
                                         <HiCheckCircle />
@@ -80,13 +105,40 @@ const MarketPost = (props: Props) => {
                             </Link>
                         )}
                     </InlineWrapper>
-                    <Button className="inner">
-                        {new Date(props.payload.created_at).toDateString()}
-                    </Button>
+                    <DropoverButton
+                        posX='l'
+                        posY='b'
+                        renderTrigger={handler => (
+                            <Button onClick={handler} className='inner'>
+                                {props.options ? (
+                                    <HiDotsHorizontal />
+                                ) : (
+                                    new Date(
+                                        props.payload.created_at
+                                    ).toDateString()
+                                )}
+                            </Button>
+                        )}>
+                        <VerticalMenu
+                            className='ui-shadow'
+                            options={[
+                                ...(props.options ?? []),
+                                {
+                                    title: `Создан: ${new Date(
+                                        props.payload.created_at
+                                    ).toDateString()}`
+                                },
+                                {
+                                    title: `Изменен: ${new Date(
+                                        props.payload.modified_at
+                                    ).toDateString()}`
+                                }
+                            ]}></VerticalMenu>
+                    </DropoverButton>
                 </InlineWrapper>
             </Card>
         </>
-    );
-};
+    )
+}
 
-export default MarketPost;
+export default MarketPost

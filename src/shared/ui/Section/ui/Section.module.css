@@ -1,0 +1,13 @@
+.wrapper {
+    gap: var(--padding-inner);
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    color: var(--color-placeholder);
+}
+
+.title.gap {
+    padding-left: var(--padding-inner);
+}

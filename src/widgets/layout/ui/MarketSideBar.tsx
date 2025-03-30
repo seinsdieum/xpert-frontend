@@ -1,46 +1,51 @@
-import style from './MarketSideBar.module.css';
-import { HiMenu, HiSearch } from 'react-icons/hi';
-import { IconLink } from '@/shared/ui';
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { SideBarLinkProps } from '@/shared/ui';
-import { searchQueryParam, selectRoute, selectSearch } from '@/features/search';
-import { searchRoute } from '@/shared/config';
-import { useSelector } from 'react-redux';
+import style from './MarketSideBar.module.css'
+import { IconLink } from '@/shared/ui'
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { SideBarLinkProps } from '@/shared/ui'
+import { searchQueryParam, selectRoute, selectSearch } from '@/features/search'
+import { searchRoute } from '@/shared/config'
+import { useSelector } from 'react-redux'
+import { HiMenu, HiSearch } from 'react-icons/hi'
 
 type Props = {
-    options?: SideBarLinkProps[];
-};
+    options?: SideBarLinkProps[]
+}
 
 const MarketSideBar = (props: Props) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const search = useSelector(selectSearch);
-    const route = useSelector(selectRoute);
+    const [isExpanded, setIsExpanded] = useState(false)
+    const search = useSelector(selectSearch)
+    const route = useSelector(selectRoute)
     return (
         <div
             onMouseLeave={() => {
-                setIsExpanded(false);
+                setIsExpanded(false)
             }}
-            className={`${style.wrapper} ${isExpanded ? style.expanded : null}`}
-        >
+            className={`${style.wrapper} ${
+                isExpanded ? style.expanded : null
+            }`}>
             <IconLink
                 onClick={() => {
-                    setIsExpanded(!isExpanded);
+                    setIsExpanded(!isExpanded)
                 }}
                 isExpanded={isExpanded}
                 icon={HiMenu}
-                title="Свернуть"
-            ></IconLink>
+                title='Свернуть'></IconLink>
             {search ? (
                 <NavLink
-                    to={`${searchRoute}${route || ''}?${searchQueryParam}=${search}`}
+                    to={`${searchRoute}${
+                        route || ''
+                    }?${searchQueryParam}=${search}`}
                     className={opt => {
                         return opt.isActive
                             ? `${style.market_link} ${style.active}`
-                            : style.market_link;
-                    }}
-                >
-                    <IconLink isExpanded={isExpanded} icon={HiSearch} title={'Поиск'} />
+                            : style.market_link
+                    }}>
+                    <IconLink
+                        isExpanded={isExpanded}
+                        icon={HiSearch}
+                        title={'Поиск'}
+                    />
                 </NavLink>
             ) : null}
             {props.options
@@ -51,9 +56,8 @@ const MarketSideBar = (props: Props) => {
                           className={opt => {
                               return opt.isActive
                                   ? `${style.market_link} ${style.active}`
-                                  : style.market_link;
-                          }}
-                      >
+                                  : style.market_link
+                          }}>
                           <IconLink
                               onClick={o.action}
                               isExpanded={isExpanded}
@@ -64,6 +68,6 @@ const MarketSideBar = (props: Props) => {
                   ))
                 : null}
         </div>
-    );
-};
-export default MarketSideBar;
+    )
+}
+export default MarketSideBar

@@ -1,9 +1,9 @@
-import { PageWidget } from '@/widgets/page';
-import style from './FeedPage.module.css';
-import { FeedSidebar } from '@/features/feed/sidebar';
-import { Outlet } from 'react-router-dom';
-import { Suspense } from 'react';
-import { FeedSkeleton } from '@/features/feed/skeleton';
+import { PageWidget } from '@/widgets/page'
+import style from './FeedPage.module.css'
+import { FeedSidebar } from '@/features/feed'
+import { Outlet } from 'react-router-dom'
+import { Suspense } from 'react'
+import { FeedSkeleton } from '@/features/feed'
 const FeedPage = () => {
     return (
         <PageWidget className={style.wrapper}>
@@ -16,7 +16,7 @@ const FeedPage = () => {
                 <FeedSidebar />
             </div>
         </PageWidget>
-    );
-};
+    )
+}
 
-export default FeedPage;
+export default FeedPage

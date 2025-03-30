@@ -1,3 +1,14 @@
-import { useGetPostsQuery } from './api';
-import { useCreatePostMutation } from './api';
-export { useGetPostsQuery, useCreatePostMutation };
+import {
+    useGetPostsQuery,
+    useCreatePostMutation,
+    useGetProfilePostsQuery,
+    useGetProfileDraftsQuery,
+    useGetProfilePrivatePostsQuery
+} from './api/postsApi'
+export {
+    useGetPostsQuery,
+    useCreatePostMutation,
+    useGetProfilePostsQuery,
+    useGetProfileDraftsQuery,
+    useGetProfilePrivatePostsQuery
+}

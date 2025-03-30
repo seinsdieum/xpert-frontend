@@ -1,0 +1,31 @@
+.menu {
+    position: absolute;
+    min-width: 200px;
+    z-index: 3;
+}
+
+.xc {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.yc {
+    top: 50%;
+    transform: translateX(-50%);
+}
+
+.b {
+    top: calc(100% + var(--padding-inner));
+}
+.t {
+    bottom: 100%;
+}
+.l {
+    right: 0;
+}
+.r {
+    left: 0;
+}
+
+.wrapper {
+    position: relative;
+}

@@ -1,0 +1,31 @@
+.main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: sticky;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-inner);
+    justify-content: center;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+}
+.about {
+    padding: var(--padding);
+}
+
+.info {
+    display: flex;
+    gap: var(--padding-inner);
+}
+
+.tools {
+    justify-self: flex-end;
+    align-self: flex-end;
+}

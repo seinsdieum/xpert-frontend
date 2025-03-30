@@ -1,5 +1,5 @@
 /* backend */
-import { backendBaseUrl } from './backend';
+import { backendBaseUrl } from './backend'
 
 /* frontend */
 import {
@@ -13,11 +13,13 @@ import {
     typeRoute,
     postsRoute,
     profileRoute,
-    createRoute
-} from './frontend';
+    createRoute,
+    archiveRoute,
+    draftRoute
+} from './frontend'
 
-import { RootState } from './storeTypes';
-import { AppDispatch } from './storeTypes';
+import { RootState } from './storeTypes'
+import { AppDispatch } from './storeTypes'
 /* export */
 export {
     backendBaseUrl,
@@ -31,7 +33,9 @@ export {
     typeRoute,
     postsRoute,
     profileRoute,
-    createRoute
-};
+    createRoute,
+    archiveRoute,
+    draftRoute
+}
 
-export type { RootState, AppDispatch };
+export type { RootState, AppDispatch }

@@ -1,0 +1,25 @@
+.wrapper {
+    background-color: var(--color-second);
+    border-radius: var(--radius-inner);
+    padding: calc(var(--padding-inner) / 2);
+}
+
+.wrapper > button {
+    border-radius: calc(var(--radius-inner) - calc(var(--padding-inner) / 2));
+    border: none;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: var(--padding);
+    font-weight: 550;
+}
+
+.wrapper > button svg {
+    font-size: var(--font-h2-size);
+    font-weight: 800;
+}
+
+.wrapper > button:hover {
+    background-color: var(--color-third);
+}
