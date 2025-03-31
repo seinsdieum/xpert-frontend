@@ -24,6 +24,7 @@ import NotificationCentered from './NotificationCentered/ui/NotificationCentered
 import Modal from './Modal/Modal'
 import Loader from './Loader/Loader'
 import VerticalMenu from './VerticalMenu/ui/VerticalMenu'
+import PendingPopOver from './PendingPopOver/ui/PendingPopOver'
 export {
     Button,
     IconButton,
@@ -43,7 +44,8 @@ export {
     NotificationCentered,
     Modal,
     Loader,
-    VerticalMenu
+    VerticalMenu,
+    PendingPopOver
 }
 export type { ButtonProps, SideBarLinkProps, ContainerProps }
 export { InlineWrapper }

@@ -70,7 +70,7 @@ const MarketPost = (props: Props) => {
                     ''
                 )}
                 <div className='card'>
-                    <p>{props.payload.body}</p>
+                    <p className='break-word'>{props.payload.body}</p>
                 </div>
                 <InlineWrapper spaceBetween>
                     <InlineWrapper>
